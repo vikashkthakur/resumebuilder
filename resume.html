@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume generator</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container" id="cv-form">
+        <h1 class="text-center my-2">Resume Generator</h1>
+        <hr>
+        <h5 class="text-center my-2">Free online resume maker,Build your-new resume in as little as 5 minutes</h3>
+            <hr>
+            <div class="row">
+
+                <div class="col-md-6">
+                    <h3>Personal Information</h3>
+
+                    <div class="form-group">
+                        <label for="namefield">Your Name</label>
+                        <input type="text" id="nameField" placeholder="Full Name" class="form-control">
+
+                    </div>
+
+
+                    <div class="form-group mt-2">
+                        <label for="contactfield">your contact number</label>
+                        <input type="text" id="contactField" placeholder="10 Digit phone number" class="form-control">
+
+                    </div>
+
+                    <div class="form-group mt-2">
+                        <label for="addressfield">your address</label>
+                        <textarea id="addressField" placeholder="Present address" class="form-control"
+                            rows="5"></textarea>
+
+                    </div>
+                    <p class="text-secondary my-3">Important links</p>
+
+                    <div class="form-group mt-2">
+                        <label for="emailfield">E-Mail</label>
+                        <input type="text" id="emailField" placeholder="Example@domain.com" class="form-control">
+
+                    </div>
+
+                    <div class="form-group mt-2">
+                        <label for="linkedinfield">linkedin</label>
+                        <input type="text" id="linkedField" placeholder="Enter linkedin URL" class="form-control">
+
+                    </div>
+
+                    <div class="form-group mt-2">
+                        <label for="Githubfield">Github</label>
+                        <input type="text" id="GithubField" placeholder="Enter Github URL" class="form-control">
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <h3>professional Information</h3>
+
+                    <div class="form-group mt-2">
+                        <label for="">Objective</label>
+                        <textarea id="objectiveField" placeholder="Enter here" class="form-control"></textarea>
+
+                    </div>
+                    <div class="form-group mt-2" id="we">
+                        <label for="">Work Experience</label>
+                        <textarea placeholder="Enter here" class="form-control weField" rows="3"></textarea>
+
+                        <div class="container text-center mt-2" id="weAddButton">
+                            <button onclick="addNewWEField()" class="btn btn-primary btn-sm">Add</button>
+                        </div>
+
+                    </div>
+                    <div class="form-group mt-2" id="aq">
+                        <label for="">Academic Qualification</label>
+                        <textarea placeholder="Enter here" class="form-control aqField"></textarea>
+
+                        <div class="container text-center mt-2" id="aqAddButton">
+                            <button onclick="addNEWAQField()" class="btn btn-primary btn-sm">Add</button>
+                        </div>
+
+                    </div>
+                    <div class="form-group mt-2" id="pq">
+                        <label for="">Projects</label>
+                        <textarea placeholder="Enter here" class="form-control pqField" rows="3"></textarea>
+                        <div class="container text-center mt-2" id="pqAddButton">
+                            <button onclick="addNEWPQField()" class="btn btn-primary btn-sm">Add</button>
+                        </div>
+
+                    </div>
+                    <div class="form-group mt-2" id="sq">
+                        <label for="">skills</label>
+                        <textarea placeholder="Enter here" class="form-control sqField" rows="3"></textarea>
+                        <div class="container text-center mt-2" id="sqAddButton">
+                            <button onclick="addNEWSQField()" class="btn btn-primary btn-sm">Add</button>
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+                </div>
+
+            </div>
+            <div class="container text-center mt-3">
+                <button onclick="generateCV()" class="btn btn-primary btn-lg">Generate CV</button>
+
+            </div>
+    </div>
+
+    <!--cv-template-->
+    <div class="container" id="cv-template">
+        <div class="row">
+
+
+            <div class="col-md-4 text-center py-5 background">
+                <!--first column-->
+
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPC7ikoXgW66ZFb0JFMRADmdD8hxYbgk2N5g&usqp=CAU"
+                    alt="" class="img-fluid myimg">
+                <div class="container">
+                    <p id="nameT1">vikash thakur</p>
+                    <p id="contactT">+916297659076,+915467865468</p>
+                    <p id="addressT">Rajendra Nagar Nawada Bihar , INDIA</p>
+
+                    <hr />
+
+                    <p>
+                        <a id="emailT" href="#1">https://www.instagram.com/striver_k_t</a>
+                    </p>
+
+                    <p>
+                        <a id="linkedT" href="#1">https://www.linkedin.com/learncodewithstriver</a>
+                    </p>
+
+                    <p>
+                        <a id="githubT" href="#1">https://www.github.com/striver.dev</a>
+                    </p>
+
+
+                </div>
+            </div>
+
+
+
+
+            <div class="col-md-8 py-5">
+                <!--second column-->
+                <h1 id="nameT2" class="text-center" style="font-weight:980">vikash thakur</h1>
+
+
+                <!--objective card-->
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Objective</h3>
+                    </div>
+
+                    <div class="card-body">
+                        <p id="objectiveT">To get an opportunity where
+                            I can make the best of my potential and contribute to the 
+                            organization's growth. Seeking a position in a company
+                             where I can launch my career and build a valuable skill set. 
+                           Seeking a role in an MNC where I can upgrade my skills with
+                            time and take the company to the next level.</p>
+                    </div>
+                </div>
+                <!--woek experience space-->
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Work Experience</h3>
+                    </div>
+
+                    <div class="card-body">
+                        <ul id="weT">
+                            <h6>Software Engineer,Microsoft</h6>
+<p>Nov 2021-May 2022</p>
+<ul>
+    <li>Developed and maintained web application using HTML,CSS and Javascript</li>
+    <li> Collabrated with cross functional seams to design and implement software solations</li>
+    <li>Optimized code performance and improved application efficency</li>
+</ul>
+                  
+<h6>Software Developer Engineer,Amazon</h6>
+<p>July 2019-october 2021</p>
+<ul>
+    <li>Assisted and developing  and testing softe=ware solutions</li>
+    <li>Worked on bug fixing and performance enhancement tasks</li>
+    
+</ul>
+
+                        </ul>
+
+
+                    </div>
+
+
+                </div>
+                <!--academic qualification-->
+ <!--academic qualification-->
+ <div class="card mt-4">
+    <div class="card-header background">
+        <h3>Academic Qualification</h3>
+    </div>
+
+    <div class="card-body">
+        <ul id="aqT">
+            <li>B.Tech in NIT Patna</li>
+            <li>Intermediate in K.L.S College</li>
+            <li>Matriculation in Gandhi Inter School</li>
+        </ul>
+        <!---<ul>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, atque.</li>
+        </ul>-->
+
+
+    </div>
+</div>
+
+                
+                
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Projects</h3>
+                    </div>
+
+                    <div class="card-body">
+                        <ul id="pqT">
+                            <li>Resume Bulider </li>
+                            <li>TODO App</li>
+                            <li>KOO Landing Web Page</li>
+                        </ul>
+                        
+
+
+                    </div>
+                </div>
+                <!--skills-->
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Skills</h3>
+                    </div>
+
+                    <div class="card-body">
+                        <ul id="sqT">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>Javascript</li>
+                            <li>DSA</li>
+                        </ul>
+                        
+
+                    </div>
+
+
+                </div>
+                <div class="container mt-3 text-center">
+                    <button onclick="printCV()" class="btn background">
+                        print cv
+                    </button>
+                </div>
+
+
+
+
+
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
